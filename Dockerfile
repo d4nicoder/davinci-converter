@@ -5,6 +5,6 @@ WORKDIR /app
 
 COPY . .
 
-RUN npm run build
+RUN npm ci && npm run build
 
 ENTRYPOINT ["npm", "start"]

@@ -14,6 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const converter_1 = __importDefault(require("./converter"));
 const find_1 = __importDefault(require("./find"));
+const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
 const init = (source, destination) => __awaiter(void 0, void 0, void 0, function* () {
     // Search for all files inside source folder
@@ -21,11 +22,12 @@ const init = (source, destination) => __awaiter(void 0, void 0, void 0, function
     destination = path_1.default.resolve(destination);
     for (let i = 0; i < files.length; i++) {
         const file = files[i];
-        const dest = path_1.default.join(destination, `${file}.mov`);
+        const dest = path_1.default.join(destination, `${file.replace(source, '')}.mov`);
         console.log(`Converting ${file}`);
         const conv = new converter_1.default();
         conv.progress();
         yield conv.convert(file, dest);
+        yield fs_1.default.promises.chmod(dest, '0777');
     }
 });
 if (process.argv.length < 4) {

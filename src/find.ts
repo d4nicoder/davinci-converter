@@ -14,7 +14,7 @@ const find = async (source: string): Promise<string[]> => {
       }
     } else if (stat.isFile()) {
       // TODO: Check extensions
-      if (/\.(mov|mp4|mpeg|avi|mkv)$/.test(source)) {
+      if (/\.(mov|mp4|mpeg|avi|mkv)$/i.test(source)) {
         files = files.concat([source])
       }
     }

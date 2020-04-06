@@ -1,5 +1,6 @@
 import Converter from './converter'
 import find from './find'
+import fs from 'fs'
 import path from 'path'
 
 const init = async (source: string, destination: string) => {
@@ -9,11 +10,12 @@ const init = async (source: string, destination: string) => {
 
   for (let i = 0; i < files.length; i++) {
     const file = files[i]
-    const dest = path.join(destination, `${file}.mov`)
+    const dest = path.join(destination, `${file.replace(source, '')}.mov`)
     console.log(`Converting ${file}`)
     const conv =  new Converter()
     conv.progress()
     await conv.convert(file, dest)
+    await fs.promises.chmod(dest, '0777')
   }
 
 }

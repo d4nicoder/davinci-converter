@@ -27,7 +27,7 @@ const find = (source) => __awaiter(void 0, void 0, void 0, function* () {
         }
         else if (stat.isFile()) {
             // TODO: Check extensions
-            if (/\.(mov|mp4|mpeg|avi|mkv)$/.test(source)) {
+            if (/\.(mov|mp4|mpeg|avi|mkv)$/i.test(source)) {
                 files = files.concat([source]);
             }
         }

@@ -1,1 +1,1 @@
-{"version":3,"file":"converter.d.ts","sourceRoot":"","sources":["../src/converter.ts"],"names":[],"mappings":"AAUA,MAAM,CAAC,OAAO,OAAO,SAAS;IAC5B,OAAO,CAAC,YAAY,CAAiB;IAErC,SAAS;IAIF,QAAQ;IAIF,OAAO,CAAE,MAAM,EAAE,MAAM,EAAE,WAAW,EAAE,MAAM;CAiC1D"}
+{"version":3,"file":"converter.d.ts","sourceRoot":"","sources":["../src/converter.ts"],"names":[],"mappings":"AAeA,MAAM,CAAC,OAAO,OAAO,SAAS;IAC5B,OAAO,CAAC,YAAY,CAAiB;IAC9B,QAAQ;IAIF,OAAO,CAAE,MAAM,EAAE,MAAM,EAAE,WAAW,EAAE,MAAM;CAiC1D"}
