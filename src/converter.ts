@@ -111,7 +111,7 @@ export default class Converter {
         console.error(e)
       }
 
-      await fsExtra.ensureDir(path.dirname(destination), {mode: 777})
+      await fsExtra.ensureDir(path.dirname(destination), {mode: 0o277})
       let command: string[] = []
       const qualityCommand: string = qualityOptions[this.quality]
 

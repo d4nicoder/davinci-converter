@@ -1,6 +1,6 @@
 {
   "name": "davinci-converter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple node application to converti video and audio files to prores/wav format to import them to Davinci Resolve",
   "main": "dist/index.js",
   "bin": "./run",
