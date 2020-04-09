@@ -7,4 +7,4 @@ COPY . .
 
 RUN npm ci && npm run build
 
-ENTRYPOINT ["npm", "start", "--input", "/source", "--output", "/destination"]
+ENTRYPOINT ["npm", "start", "--", "--input", "/source", "--output", "/destination"]
