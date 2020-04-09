@@ -72,11 +72,11 @@ This is mandatory. Defines the output quality (low, mid, high, extreme). Default
 
 ### **`SOURCE`**
 
-This is required. Defines source folder. In docker is mandatory and default is /source
+This is mandatory. Defines source folder. Default is /source
 
 ### **`DESTINATION`**
 
-This is required. Defines destination folder. In docker is mandatory and default is /destination
+This is mandatory. Defines destination folder. Default is /destination
 
 
 ## License
