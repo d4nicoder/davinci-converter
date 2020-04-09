@@ -37,6 +37,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const child_process_1 = require("child_process");
 const fs_extra_1 = __importDefault(require("fs-extra"));
+const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
 const progress_1 = __importDefault(require("progress"));
 const qualityOptions = {
@@ -120,7 +121,7 @@ class Converter {
                 catch (e) {
                     console.error(e);
                 }
-                yield fs_extra_1.default.ensureDir(path_1.default.dirname(destination), { mode: 777 });
+                yield fs_1.default.promises.mkdir(path_1.default.dirname(destination), { mode: '777', recursive: true });
                 let command = [];
                 const qualityCommand = qualityOptions[this.quality];
                 if (sourceType === 'video') {

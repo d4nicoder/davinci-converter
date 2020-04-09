@@ -23,7 +23,8 @@
  */
 
 import { spawn } from 'child_process'
-import fsExtra, { existsSync } from 'fs-extra'
+import fsExtra from 'fs-extra'
+import fs from 'fs'
 import path from 'path'
 import ProgressBar from 'progress'
 
@@ -111,7 +112,7 @@ export default class Converter {
         console.error(e)
       }
 
-      await fsExtra.ensureDir(path.dirname(destination), {mode: 0o277})
+      await fs.promises.mkdir(path.dirname(destination), {mode: '777', recursive: true})
       let command: string[] = []
       const qualityCommand: string = qualityOptions[this.quality]
 
