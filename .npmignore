@@ -1,0 +1,6 @@
+src
+.git
+Dockerfile
+tsconfig.json
+tslint.json
+.vscode
