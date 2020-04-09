@@ -35,6 +35,8 @@ Options:
    -o, --output           Output folder to put the encoded files
 ```
 
+![](davinci-converter.gif)
+
 ## Docker
 
 When executes as docker container, source files must be mapped to __/source__ and destination folder to __/destination__
