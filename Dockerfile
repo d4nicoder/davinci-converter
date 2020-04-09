@@ -1,10 +1,10 @@
-FROM node:12
+FROM node:13.12.0-alpine3.11
 
-RUN apt-get update && apt-get install -y ffmpeg && mkdir /app
+RUN apk update && apk add ffmpeg && mkdir /app
 WORKDIR /app
 
 COPY . .
 
 RUN npm ci && npm run build
 
-ENTRYPOINT ["npm", "start", "--input", "/source", "--output", "/destination"]
+CMD ["npm", "start", "--", "--input", "/source", "--output", "/destination"]
