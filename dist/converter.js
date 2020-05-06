@@ -162,10 +162,16 @@ class Converter {
                         for (let i = 0; i < tLines.length; i++) {
                             const key = tLines[i].split('=');
                             if (typeof key[0] !== 'undefined' && typeof key[1] !== 'undefined') {
+                                if (typeof key[0] !== 'string' || typeof key[1] !== 'string') {
+                                    continue;
+                                }
                                 progress[key[0]] = key[1];
                                 if (key[0] === 'frame' && this.totalFrames > 0) {
                                     const frame = parseInt(key[1], 10);
                                     const increment = frame - previousFrame;
+                                    if (typeof increment !== 'number') {
+                                        continue;
+                                    }
                                     bar.tick(increment);
                                     previousFrame = frame + 0;
                                 }
